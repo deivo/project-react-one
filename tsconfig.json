@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "Node", // 模块风格解析
+        "outDir": "./dist", // 输出目录
+        "sourceMap": true, 
+        "noImplicitAny": true,   // 不允许隐含的any类型
+        "module": "ESNext",      // 生成的代码规范
+        "target": "ES5",         // 生成代码目标
+        "jsx": "react",        
+        "esModuleInterop": true, // 转换ES6模块
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
