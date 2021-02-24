@@ -61,6 +61,7 @@
     "less": "^4.1.1",
     "less-loader": "^8.0.0",
     "lib-flexible": "^0.3.2",
+    "lint-staged": "^10.5.4",
     "postcss-loader": "^5.0.0",
     "px2rem-loader": "^0.1.9",
     "style-loader": "^2.0.0",
@@ -75,13 +76,15 @@
     }
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "husky": {
     "hooks": {
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "*.tsx": "eslint --fix"
   }
 }
