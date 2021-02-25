@@ -27,7 +27,7 @@ function Profile(props: Prop) {
           <Descriptions.Item label="手机号">13800001111</Descriptions.Item>
           <Descriptions.Item label="邮箱">15723424@qq.com</Descriptions.Item>
         </Descriptions>
-        <Button type="primary">退出登录</Button>
+        <Button type="primary" onClick={() => props.logout()}>退出登录</Button>
       </div>
     )
   } else if (props.loginState === LOGIN_TYPES.UN_LOGIN) {
@@ -36,14 +36,14 @@ function Profile(props: Prop) {
         <Alert type="warning" message="当前用户尚未登录" description="亲爱的用户你好，请选择注册或者登录" />
         <div style={{ textAlign: 'center', padding: '20px' }}>
           <Button type="dashed" onClick={() => props.history.push('/login')}>登录</Button>
-          <Button type="dashed" onClick={() => props.history.push('/login')}>注册</Button>
+          <Button type="dashed" onClick={() => props.history.push('/register')}>注册</Button>
         </div>
       </>
     )
   }
   return (
     <section>
-      <NavBar history={props.history}>个人中心</NavBar>
+      <NavBar>个人中心</NavBar>
       {content}
     </section>
   )

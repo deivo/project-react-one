@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 axios.defaults.baseURL = 'http://localhost:7001';
-axios.defaults.headers.post['Content-Type'] = "application/json;charset=utf8";
+// axios.defaults.headers.post['Content-Type'] = "application/json;charset=utf8";
 // 请求拦截器
 axios.interceptors.request.use((config) => {
   const token = sessionStorage.getItem('token');
