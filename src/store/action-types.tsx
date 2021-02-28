@@ -6,5 +6,7 @@ export const VALIDATE = 'VALIDATE'
 export const LOGOUT = 'LOGOUT'
 
 // 修改头像
-
 export const SET_AVATAR = 'SET_AVATAR'
+
+// 获取slider
+export const GET_SLIDERS = 'GET_SLIDERS'
