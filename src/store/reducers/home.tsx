@@ -47,6 +47,17 @@ function reducer(state: HomeState = initialState, action: AnyAction): HomeState 
         offset: state.lessons.offset + action.payload.list.length
       }
     }
+  case types.REFRESH_LESSONS:
+    return {
+      ...state, 
+      lessons: {
+        ...state.lessons,
+        loading: false,
+        hasMore: action.payload.hasMore,
+        list: action.payload.list,
+        offset: action.payload.list.length
+      }
+    }
   default:
     return state;
   }

@@ -12,3 +12,7 @@ export function getLessons(
 ) {
   return axios.get(`/lesson/list?category=${currentCategory}&offset=${offset}&limit=${limit}`);
 }
+
+export function getLesson<T>(id: string) {
+  return axios.get<T, T>(`/lesson/${id}`)
+}

@@ -24,6 +24,18 @@ const actions = {
         }
       })()
     }
+  },
+  refreshLessons() { // 重新获取第一页的数据，读取最新的分类
+    return function (dispatch: Function, getState: Function) {
+      (async function () {
+        const { currentCategory, lessons: { limit, loading } } = getState().home;
+        if (!loading) {
+          dispatch({ type: types.SET_LESSONS_LOADING, payload: true }); // 加载状态改为 true
+          const result = await getLessons(currentCategory, 0, limit);
+          dispatch({ type: types.REFRESH_LESSONS, payload: result.data }); // 设置新的课程数据
+        }
+      })()
+    }
   }
 }
 export default actions

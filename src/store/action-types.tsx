@@ -15,5 +15,7 @@ export const GET_SLIDERS = 'GET_SLIDERS'
 export const SET_LESSONS = 'SET_LESSONS'
 // 设置加载课程列表的状态
 export const SET_LESSONS_LOADING = 'SET_LESSONS_LOADING'
+// 属性课程列表
+export const REFRESH_LESSONS = 'REFRESH_LESSONS'
 
 

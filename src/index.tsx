@@ -10,6 +10,7 @@ import Profile from './routes/Profile'
 import Mine from './routes/Mine'
 import Register from './routes/Register'
 import Login from './routes/Login'
+import Detail from './routes/Detail'
 import history from './store/history'
 import './assets/css/common.less'
 
@@ -23,6 +24,7 @@ ReactDOM.render(
           <Route path="/profile" component={Profile} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/detail/:id" component={Detail} />
           <Redirect to="/" />
         </Switch>
       </main>

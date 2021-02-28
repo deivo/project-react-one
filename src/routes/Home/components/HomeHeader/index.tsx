@@ -25,7 +25,9 @@ const transitionStyles: TransitionStyles = {
 
 interface Props {
   currentCategory: string;
-  setCurrentCategory: (currentCategory: string) => void
+  setCurrentCategory: (currentCategory: string) => void;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  refreshLessons: Function;
 }
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 function HomeHeader(props: Props) {
@@ -34,6 +36,7 @@ function HomeHeader(props: Props) {
     const target: HTMLUListElement = event.target as HTMLUListElement; // 获取事件源对象
     const category = target.dataset.category; // 获取事件源对应的自定义属性
     props.setCurrentCategory(category);
+    props.refreshLessons();
     setIsMenuVisible(false);
   }
   return (
@@ -47,8 +50,8 @@ function HomeHeader(props: Props) {
           (state: keyof TransitionStyles) => (
             <ul className="category" onClick={setCurrentCategory} style={{ ...defaultStyle, ...transitionStyles[state] }}>
               <li data-category="all" className={classnames({ active: props.currentCategory === 'all' })}>全部</li>
-              <li data-category="React" className={classnames({ active: props.currentCategory === 'React' })}>React</li>
-              <li data-category="Vue" className={classnames({ active: props.currentCategory === 'Vue' })}>Vue</li>
+              <li data-category="react" className={classnames({ active: props.currentCategory === 'React' })}>React</li>
+              <li data-category="vue" className={classnames({ active: props.currentCategory === 'Vue' })}>Vue</li>
             </ul>
           )
         }
