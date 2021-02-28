@@ -10,3 +10,10 @@ export const SET_AVATAR = 'SET_AVATAR'
 
 // 获取slider
 export const GET_SLIDERS = 'GET_SLIDERS'
+
+// 设置课程列表
+export const SET_LESSONS = 'SET_LESSONS'
+// 设置加载课程列表的状态
+export const SET_LESSONS_LOADING = 'SET_LESSONS_LOADING'
+
+

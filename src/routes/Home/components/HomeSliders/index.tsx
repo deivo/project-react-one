@@ -15,7 +15,6 @@ function HomeSliders(props: Props) {
       props.getSliders(); // 请求加载一次
     }
   }, []);
-  console.log(props.sliders, 'home-sliders');
   return (
     <Carousel effect={'scrollx'} autoplay>
       {
