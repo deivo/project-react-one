@@ -20,7 +20,7 @@ function HomeSliders(props: Props) {
     <Carousel effect={'scrollx'} autoplay>
       {
         props.sliders.map((slider: Slider, index: number) => (
-          <div key={slider.url} id={slider.url}>
+          <div key={index} id={slider.url}>
             <img src={slider.url} width="100%" />
           </div>
         ))
