@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:7001';
-// axios.defaults.headers.post['Content-Type'] = "application/json;charset=utf8";
+axios.defaults.baseURL = 'http://localhost:8888';
+axios.defaults.headers.post['Content-Type'] = "application/json;charset=utf8";
 // 请求拦截器
 axios.interceptors.request.use((config) => {
   const token = sessionStorage.getItem('token');
@@ -13,6 +13,6 @@ axios.interceptors.request.use((config) => {
 })
 
 // 响应拦截器
-axios.interceptors.response.use((res) => res.data, (error) => Promise.reject(error))
+axios.interceptors.response.use((response) => response.data, (error) => Promise.reject(error))
 
 export default axios

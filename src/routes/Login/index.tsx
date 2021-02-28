@@ -22,7 +22,7 @@ function Login(props: Prop) {
   return (
     <div className="login">
       <NavBar>登录</NavBar>
-      <Form onFinish={onFinish} onFinishFailed={onFinishFailed} className="register-form">
+      <Form onFinish={onFinish} onFinishFailed={onFinishFailed} className="login-form">
         <Form.Item label="用户名" name="username" rules={[{ required: true, message: '请输入你的用户名' }]}>
           <Input prefix={<UserAddOutlined />} placeholder="用户名" />
         </Form.Item>
@@ -37,7 +37,7 @@ function Login(props: Prop) {
   )
 }
 function mapStateToProps(state: RootState): ProfileState {
-  return state.register
+  return state.profile
 }
 
 export default connect(mapStateToProps, actions)(Login)

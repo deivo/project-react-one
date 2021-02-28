@@ -2,7 +2,7 @@
 export interface RegisterPayload {
   username: string,
   password: string,
-  email?: string,
+  email: string,
   confirmPassword: string
 }
 
@@ -13,7 +13,7 @@ export interface LoginPayload {
 }
 
 export interface BaseResult {
-  err: number,
+  success: boolean,
   massage?: string
 }
 
@@ -28,7 +28,9 @@ export type LoginResult = BaseResult & {
 }
 
 export interface User {
+  id: string,
   username: string,
   password: string,
-  email: string | null,
+  email: string,
+  avatar: string,
 }

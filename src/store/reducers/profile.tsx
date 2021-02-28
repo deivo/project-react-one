@@ -18,13 +18,15 @@ const initialState: ProfileState = {
 function reducer(state: ProfileState = initialState, action: AnyAction): ProfileState {
   switch (action.type) {
   case types.VALIDATE:
-    if(action.payload.err == 0){
+    if(action.payload.success){
       return {...state, loginState:LOGIN_TYPES.LOGIN, user: action.payload.data, error: null};
     } else {
       return {...state, loginState:LOGIN_TYPES.UN_LOGIN, user: null, error: action.payload};
     }
   case types.LOGOUT:
     return {...state, loginState:LOGIN_TYPES.UN_LOGIN, user: null, error: null};
+  case types.SET_AVATAR:
+    return {...state, user: {...state.user, avatar: action.payload}}  
   default:
     return state;
   }

@@ -22,7 +22,7 @@ const actions = {
       (
         async function () {
           const result: RegisterResult = await register<RegisterResult>(values);
-          if (result.err) { // 如果注册成功了，调转登录
+          if (result.success) { // 如果注册成功了，调转登录
             dispatch(push('/login'))
           } else {
             message.error(result.massage);
@@ -36,7 +36,7 @@ const actions = {
       (
         async function () {
           const result: LoginResult = await login<LoginResult>(values);
-          if (result.err == 0) { // 如果登录成功了，调转个人中心
+          if (result.success) { // 如果登录成功了，调转个人中心
             sessionStorage.setItem('token', result.data.token);
             dispatch(push('/profile'))
           } else {
@@ -51,6 +51,12 @@ const actions = {
       sessionStorage.removeItem('token');
       dispatch({ type: types.LOGOUT });
       dispatch(push('/login'))
+    }
+  },
+  setAvatar(avatar: string) {
+    return {
+      type: types.SET_AVATAR,
+      payload: avatar
     }
   }
 }

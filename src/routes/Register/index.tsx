@@ -9,8 +9,9 @@ import { RouteComponentProps } from 'react-router-dom'
 import './index.less'
 import actions from '@/store/actions/profile'
 
-type DispatchProps = typeof actions;
+
 type StateProps = ReturnType<typeof mapStateToProps>
+type DispatchProps = typeof actions;
 type Prop = PropsWithChildren<RouteComponentProps> & StateProps & DispatchProps;
 function Register(props: Prop) {
   const onFinish = (values: RegisterPayload) => {
@@ -43,7 +44,7 @@ function Register(props: Prop) {
   )
 }
 function mapStateToProps(state: RootState): ProfileState {
-  return state.register
+  return state.profile
 }
 
 export default connect(mapStateToProps, actions)(Register)
