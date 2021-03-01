@@ -6,7 +6,7 @@ const path = require('path');
 const isProduction = process.env.NODE_ENV === 'production'
 module.exports = {
   mode: isProduction ? 'production' : 'development',
-  entry: './src/index.tsx',
+  entry: path.join(__dirname, 'src/index.tsx'),
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'main.js'
@@ -88,7 +88,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: path.join(__dirname, 'src/index.html')
     })
   ]
 };

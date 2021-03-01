@@ -1,5 +1,6 @@
 import NavBar from '@/components/NavBar'
-import { ProfileState, RootState } from '@/store/reducers'
+import { RootState } from '@/store/reducers'
+import { ProfileState } from '@/store/reducers/profile'
 import { LoginPayload } from '@/typings/user'
 import { LockOutlined, UserAddOutlined } from '@ant-design/icons'
 import { Button, Form, Input, message } from 'antd'

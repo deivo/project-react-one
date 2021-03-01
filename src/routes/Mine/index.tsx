@@ -1,4 +1,5 @@
-import { MineState, RootState } from '@/store/reducers'
+import { RootState } from '@/store/reducers'
+import { MineState } from '@/store/reducers/mine'
 import React, { PropsWithChildren } from 'react'
 import { connect } from 'react-redux'
 import { RouteComponentProps } from 'react-router-dom'

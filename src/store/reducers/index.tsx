@@ -1,9 +1,10 @@
 import { combineReducers, ReducersMapObject, Reducer } from 'redux'
 import { connectRouter } from 'connected-react-router'
-import history from '../history'
-import home, { HomeState } from './home'
-import mine, { MineState } from './mine'
-import profile, { ProfileState } from './profile'
+import history from '@/store/history'
+import home from '@/store/reducers/home'
+import mine from '@/store/reducers/mine'
+import profile from '@/store/reducers/profile'
+
 
 // 定义一个映射对象 key是字符串，值是一个reducer
 const reducers: ReducersMapObject = {
@@ -17,10 +18,5 @@ type RootState = {
   [key in keyof typeof reducers]: ReturnType<typeof reducers[key]>
 }
 const rootReducer: Reducer<RootState> = combineReducers<RootState>(reducers)
-export {
-  RootState,
-  HomeState,
-  MineState,
-  ProfileState
-}
+export { RootState }
 export default rootReducer

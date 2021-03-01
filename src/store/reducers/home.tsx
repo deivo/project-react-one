@@ -38,7 +38,7 @@ function reducer(state: HomeState = initialState, action: AnyAction): HomeState 
     return { ...state, lessons: { ...state.lessons, loading: action.payload } }
   case types.SET_LESSONS:
     return {
-      ...state, 
+      ...state,
       lessons: {
         ...state.lessons,
         loading: false,
@@ -49,7 +49,7 @@ function reducer(state: HomeState = initialState, action: AnyAction): HomeState 
     }
   case types.REFRESH_LESSONS:
     return {
-      ...state, 
+      ...state,
       lessons: {
         ...state.lessons,
         loading: false,
@@ -62,5 +62,4 @@ function reducer(state: HomeState = initialState, action: AnyAction): HomeState 
     return state;
   }
 }
-
 export default reducer

@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
-import store from './store'
-import Tabs from './components/Tabs'
+import store from '@/store'
+import Tabs from '@/components/Tabs'
 import { Spin } from 'antd'
-const Home = React.lazy(() => import('./routes/Home'))
-const Profile = React.lazy(() => import('./routes/Profile'))
+const Home = React.lazy(() => import('@/routes/Home'))
+const Profile = React.lazy(() => import('@/routes/Profile'))
 const Mine = React.lazy(() => import('./routes/Mine'))
-const Register = React.lazy(() => import('./routes/Register'))
-const Login = React.lazy(() => import('./routes/Login'))
-const Detail = React.lazy(() => import('./routes/Detail'))
-import history from './store/history'
-import './assets/css/common.less'
+const Register = React.lazy(() => import('@/routes/Register'))
+const Login = React.lazy(() => import('@/routes/Login'))
+const Detail = React.lazy(() => import('@/routes/Detail'))
+import history from '@/store/history'
+import '@/assets/css/common.less'
 
 ReactDOM.render(
   <Provider store={store}>
