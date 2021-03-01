@@ -20,8 +20,8 @@ function LessonDetail(props: Prop) {
       let lesson: Lesson = props.location.state;
       if (!lesson) {
         const id = props.match.params.id;
-        let result: LessonResult = await getLesson<LessonResult>(id);
-        if(result.success) {
+        const result: LessonResult = await getLesson<LessonResult>(id);
+        if (result.success) {
           lesson = result.data;
         }
       }
